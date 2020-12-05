@@ -39,6 +39,10 @@
 		15838861D5ED408497EFAB36 /* Mukta-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A05389B480D14E7890483A05 /* Mukta-Medium.ttf */; };
 		81FB72B37B2F45A795A43B80 /* Mukta-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B4056130CA90443B90E44A9F /* Mukta-Regular.ttf */; };
 		AAA08F21D8294CA5A5C37419 /* Mukta-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 765531926DFF4869A110F3D2 /* Mukta-SemiBold.ttf */; };
+		77BAD4CC64314BB4BC165A07 /* GTEesti-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F56CB38BF66544F99851E419 /* GTEesti-Bold.ttf */; };
+		6C06CE71E9B54F1096AAAFE6 /* GTEesti-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD6FA45AD9CF431EBCF85B3D /* GTEesti-Light.ttf */; };
+		6C85C67A1DE94C75A3430CED /* GTEesti-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0066967C2FE4A8B885937A6 /* GTEesti-Medium.ttf */; };
+		CB5EC7D266EF4154A674B6D6 /* GTEesti-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 120F51B080B945168FBB7522 /* GTEesti-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,10 @@
 		A05389B480D14E7890483A05 /* Mukta-Medium.ttf */ = {isa = PBXFileReference; name = "Mukta-Medium.ttf"; path = "../src/assets/fonts/Mukta-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		B4056130CA90443B90E44A9F /* Mukta-Regular.ttf */ = {isa = PBXFileReference; name = "Mukta-Regular.ttf"; path = "../src/assets/fonts/Mukta-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		765531926DFF4869A110F3D2 /* Mukta-SemiBold.ttf */ = {isa = PBXFileReference; name = "Mukta-SemiBold.ttf"; path = "../src/assets/fonts/Mukta-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F56CB38BF66544F99851E419 /* GTEesti-Bold.ttf */ = {isa = PBXFileReference; name = "GTEesti-Bold.ttf"; path = "../src/assets/fonts/GTEesti-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BD6FA45AD9CF431EBCF85B3D /* GTEesti-Light.ttf */ = {isa = PBXFileReference; name = "GTEesti-Light.ttf"; path = "../src/assets/fonts/GTEesti-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C0066967C2FE4A8B885937A6 /* GTEesti-Medium.ttf */ = {isa = PBXFileReference; name = "GTEesti-Medium.ttf"; path = "../src/assets/fonts/GTEesti-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		120F51B080B945168FBB7522 /* GTEesti-Regular.ttf */ = {isa = PBXFileReference; name = "GTEesti-Regular.ttf"; path = "../src/assets/fonts/GTEesti-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +238,10 @@
 				A05389B480D14E7890483A05 /* Mukta-Medium.ttf */,
 				B4056130CA90443B90E44A9F /* Mukta-Regular.ttf */,
 				765531926DFF4869A110F3D2 /* Mukta-SemiBold.ttf */,
+				F56CB38BF66544F99851E419 /* GTEesti-Bold.ttf */,
+				BD6FA45AD9CF431EBCF85B3D /* GTEesti-Light.ttf */,
+				C0066967C2FE4A8B885937A6 /* GTEesti-Medium.ttf */,
+				120F51B080B945168FBB7522 /* GTEesti-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -396,6 +408,10 @@
 				15838861D5ED408497EFAB36 /* Mukta-Medium.ttf in Resources */,
 				81FB72B37B2F45A795A43B80 /* Mukta-Regular.ttf in Resources */,
 				AAA08F21D8294CA5A5C37419 /* Mukta-SemiBold.ttf in Resources */,
+				77BAD4CC64314BB4BC165A07 /* GTEesti-Bold.ttf in Resources */,
+				6C06CE71E9B54F1096AAAFE6 /* GTEesti-Light.ttf in Resources */,
+				6C85C67A1DE94C75A3430CED /* GTEesti-Medium.ttf in Resources */,
+				CB5EC7D266EF4154A674B6D6 /* GTEesti-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
