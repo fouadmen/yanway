@@ -27,7 +27,8 @@ module.exports = {
           "_utils": "./src/utils",
           "_reducers" : './src/redux_/reducers',
           "_actions" : './src/redux_/actions',
-          "_redux" : "./src/redux_"
+          "_redux" : "./src/redux_",
+          "_modals": "./src/modals"
         },
       },
     ]
