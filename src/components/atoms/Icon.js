@@ -8,6 +8,7 @@ import { TouchableOpacity, StyleSheet } from "react-native";
 import {Colors} from '_styles';
 
 const _status = {
+    "default" : {color: Colors.TEXT_BASIC_COLOR},
     "base": {color: Colors.TEXT_HINT_COLOR},
     "primary" : {color: Colors.PRIMARY},
     "success": {color: Colors.SUCCESS},
@@ -29,7 +30,6 @@ const Icon = (props)=>{
     }else{
         child=()=>( <Ionicons style={StyleSheet.flatten([style, status ? _status[status] : _status['base'] ])} name={name} size={size || 24}/>)
     }
-    console.log(disabled);
     return (
         <TouchableOpacity disabled={disabled} style={containerStyle} onPress={pressHandler}>
             {child()}

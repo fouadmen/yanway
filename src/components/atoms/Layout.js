@@ -1,9 +1,9 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native'
 
-const Layout = ({ children })=>{
+const Layout = ({ children, style })=>{
     return (
-        <View style={styles.layout}>
+        <View style={StyleSheet.flatten([styles.layout, style])}>
             {children}
         </View>
     )

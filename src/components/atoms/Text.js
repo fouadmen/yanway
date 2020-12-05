@@ -7,6 +7,9 @@ const categories = {
     'h2': {fontSize: Typography.FONT_SIZE_24}, 
     'h3': {fontSize: Typography.FONT_SIZE_20}, 
     'h4': {fontSize: Typography.FONT_SIZE_18}, 
+    's1': {fontSize: Typography.FONT_SIZE_14},
+    's2': {fontSize: Typography.FONT_SIZE_13},
+    's3': {fontSize: Typography.FONT_SIZE_12},
     'p': {fontSize: Typography.FONT_SIZE_16}
 }
 
