@@ -16,41 +16,25 @@ const _status = {
     "white":{color: Colors.WHITE}
 }
 const Icon = (props)=>{
-    const {style, status, name, size, type, pressHandler, containerStyle} = props;
-    
+    const {style, status, name, size, type, pressHandler, containerStyle, disabled} = props;
+    let child = ""
     if(type==="AntDesign") {
-        return (
-            <TouchableOpacity style={containerStyle} onPress={pressHandler}>
-                <AntDesign style={StyleSheet.flatten([style, status ? _status[status] : _status['base'] ])} name={name} size={size || 24}/>
-            </TouchableOpacity>
-            
-        );
+        child=()=> (<AntDesign style={StyleSheet.flatten([style, status ? _status[status] : _status['base'] ])} name={name} size={size || 24}/>)            
     }else if(type==="FontAwesome"){
-        return (<TouchableOpacity onPress={pressHandler}>
-            <FontAwesome style={StyleSheet.flatten([style, status ? _status[status] : _status['base'] ])} name={name} size={size || 24}/>
-        </TouchableOpacity>
-            
-        );
+        child= ()=> (<FontAwesome style={StyleSheet.flatten([style, status ? _status[status] : _status['base'] ])} name={name} size={size || 24}/>)
     }else if(type==="MaterialIcons"){
-        return (<TouchableOpacity onPress={pressHandler}>
-            <MaterialIcons style={StyleSheet.flatten([style, status ? _status[status] : _status['base'] ])} name={name} size={size || 24}/>
-        </TouchableOpacity>
-            
-        );
+        child = ()=>(<MaterialIcons style={StyleSheet.flatten([style, status ? _status[status] : _status['base'] ])} name={name} size={size || 24}/>)
     }else if(type==="Feather"){
-        return (<TouchableOpacity onPress={pressHandler}>
-            <Feather style={StyleSheet.flatten([style, status ? _status[status] : _status['base'] ])} name={name} size={size || 24}/>
-        </TouchableOpacity>
-            
-        );
+        child=()=>(<Feather style={StyleSheet.flatten([style, status ? _status[status] : _status['base'] ])} name={name} size={size || 24}/>)
     }else{
-        return (
-            <TouchableOpacity onPress={pressHandler}>
-                 <Ionicons style={StyleSheet.flatten([style, status ? _status[status] : _status['base'] ])} name={name} size={size || 24}/>
-        </TouchableOpacity>
-           
-        );
+        child=()=>( <Ionicons style={StyleSheet.flatten([style, status ? _status[status] : _status['base'] ])} name={name} size={size || 24}/>)
     }
+    console.log(disabled);
+    return (
+        <TouchableOpacity disabled={disabled} style={containerStyle} onPress={pressHandler}>
+            {child()}
+        </TouchableOpacity>
+    );
 
     
 }

@@ -4,7 +4,6 @@ import { StyleSheet, View } from 'react-native';
 import { Colors } from '_styles';
 import {Text, Icon} from '_atoms';
 
-
 const TimePicker = ({time, callback}) => {
     const date = new Date(time);
     const _time = ('0' + date.getHours()).slice(-2) +':'+('0' + date.getMinutes()).slice(-2) 
@@ -18,7 +17,6 @@ const TimePicker = ({time, callback}) => {
 
 const styles = StyleSheet.create({
     container:{
-        marginHorizontal:24,
         marginTop:16,
         borderRadius:40,
         borderWidth:1,

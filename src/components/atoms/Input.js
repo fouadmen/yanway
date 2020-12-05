@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     borderRadius:15,
     backgroundColor:'#EDEDED',
     paddingHorizontal:16,
-    ...Mixins.margin(0,24,16,24),
+    marginTop:16,
   },
   input: {
     borderColor:'#EDEDED',

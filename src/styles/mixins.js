@@ -49,7 +49,6 @@ export function border(borderColor="#000", borderTopWidth,borderRightWidth=borde
 
 export function header() {
   const style = StyleSheet.create({header : {
-    marginHorizontal : 24,
     marginBottom: 40,
     marginTop: 16
   }})

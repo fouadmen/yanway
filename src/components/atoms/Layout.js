@@ -13,7 +13,8 @@ const styles = StyleSheet.create({
     layout:{
         flex:1,
         flexDirection:'column',
-        backgroundColor:'#fff'
+        backgroundColor:'#fff',
+        paddingHorizontal:24
     }
 })
 export default Layout;

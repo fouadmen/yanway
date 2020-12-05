@@ -11,7 +11,6 @@ const Divider = ({style}) => {
 const styles = StyleSheet.create({
   default: {
    height:1,
-   marginHorizontal:24,
    backgroundColor:Colors.GRAY_LIGHT
   },
 });  

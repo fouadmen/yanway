@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   header: {
-    marginHorizontal: 24,
     marginBottom:40,
     marginTop:16,
     fontWeight:'bold'

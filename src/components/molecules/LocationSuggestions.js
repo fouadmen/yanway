@@ -52,7 +52,7 @@ const LocationSuggestions = (props)=>{
             {suggestions.map((l,i)=>{
                 return (
                     <>
-                        <View onPress={()=>onChoose({description : l.description, place_id : l.place_id})}  style={{height:92, marginHorizontal:24, flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
+                        <View onPress={()=>onChoose({description : l.description, place_id : l.place_id})}  style={{height:92, flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
                             <View style={{flexDirection:'column', justifyContent:'center'}}>
                                 <Text status='base' weight="medium" category="h4">{l.description}</Text>
                                 <Text status='hint' weight="medium" category="p">Tokyo</Text>
