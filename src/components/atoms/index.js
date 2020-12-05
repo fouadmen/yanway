@@ -4,4 +4,6 @@ import Icon from './Icon';
 import Layout from './Layout';
 import Text from './Text';
 import Button from './Button';
-export {Input, Divider, Icon, Layout, Text, Button};
+import Header from './Header';
+import FAB from './FAB'
+export {Input, Divider, Icon, Layout, Text, Button, Header, FAB};
