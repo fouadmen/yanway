@@ -1,12 +1,13 @@
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import {Divider, Input, Layout, Text, Button} from '_atoms';
+import {Mixins} from '_styles';
 
 const Search = ({navigation}) => {
     navigation.setOptions = {child : ()=><Input placeholder='Address...' pressHandler={()=>navigation.goBack()}/>};
     return (
-        <Layout style={styles.container} level='1'>
-            <Text style={styles.header} category="h1" weight='medium'>Where are you going ?</Text>
+        <Layout >
+            <Text style={Mixins.header()} category="h1" weight='medium'>Where are you going ?</Text>
             <View style={styles.inputs}>
                <TouchableOpacity onPress={() => navigation.navigate('TextInputModal',{target:''})} style={styles.input}><Text style={{marginVertical:16, marginHorizontal:16}} status='hint' category="h4" weight='regular'>Starting Location</Text></TouchableOpacity>
                <TouchableOpacity onPress={() => navigation.navigate('TextInputModal',{target:''})} style={styles.input}><Text style={{marginVertical:16, marginHorizontal:16}} status='hint' category="h4" weight='regular'>Destination</Text></TouchableOpacity>
@@ -24,15 +25,6 @@ const Search = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex:1,
-    flexDirection: 'column',
-  },
-  header: {
-    marginHorizontal: 24,
-    marginBottom:40,
-    marginTop:16,
-  },
   inputs:{
     display:'flex', 
     flexDirection:'column', 

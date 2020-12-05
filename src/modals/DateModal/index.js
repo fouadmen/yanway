@@ -1,3 +1,3 @@
 import Calendar from './Calendar';
-import Time from './TimePicker';
+import Time from './Time';
 export {Calendar, Time};

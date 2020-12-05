@@ -1,6 +1,8 @@
 import React from "react";
 import {CalendarList} from 'react-native-calendars';
 import {Typography} from '_styles';
+import { Header, Layout, Text} from '_atoms';
+import {Mixins} from '_styles';
 
 function getInitialState() {
   var inialState = {}
@@ -12,8 +14,7 @@ function getInitialState() {
   return  inialState;
 }
 
-const Calendar = ({handleConfirm, hideDatePicker}) => {
-  const initialState = getInitialState();
+const Calendar = ({navigation}) => {
   const [makedDates, setMarked] = React.useState(getInitialState());
   const [selectedDate, setDate] = React.useState(new Date());
   const changeDate=(day)=>{
@@ -21,22 +22,27 @@ const Calendar = ({handleConfirm, hideDatePicker}) => {
     var marker = {}
     marker[day.dateString] = {selected: true, customStyles : {text:{marginTop:6}}}
     setMarked(JSON.parse(JSON.stringify(marker)));
+    navigation.navigate("TimePicker");
   }
   return (
-    <CalendarList 
-    selected={selectedDate}
-      minDate={new Date()} 
-      pastScrollRange={0} 
-      futureScrollRange={6}
-      onDayPress={changeDate}
-      markedDates={makedDates}
-      markingType={'custom'}  
-      theme={{
-        textDayFontFamily: Typography.FONT_FAMILY_REGULAR,
-        textMonthFontFamily: Typography.FONT_FAMILY_REGULAR,
-        textDayHeaderFontFamily: Typography.FONT_FAMILY_REGULAR,
-      }}
-    />
+    <Layout>
+      <Header first navigation={navigation}/>
+      <Text style={Mixins.header()} category="h1" weight='medium'>When are you leaving?</Text>
+      <CalendarList 
+        selected={selectedDate}
+        minDate={new Date()} 
+        pastScrollRange={0} 
+        futureScrollRange={6}
+        onDayPress={changeDate}
+        markedDates={makedDates}
+        markingType={'custom'}  
+        theme={{
+          textDayFontFamily: Typography.FONT_FAMILY_REGULAR,
+          textMonthFontFamily: Typography.FONT_FAMILY_REGULAR,
+          textDayHeaderFontFamily: Typography.FONT_FAMILY_REGULAR,
+        }}
+      />
+    </Layout>
   );
 };
 

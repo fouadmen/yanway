@@ -7,7 +7,7 @@ import ProfileScreen from '_scenes/profile';
 import MessagesScreen from '_scenes/messages';
 import ProposeScreen from '_scenes/propose';
 import TextInputModal from '_modals/TextInputModal';
-import {Calendar, TimePicker} from '_modals/DateModal';
+import {Calendar, Time} from '_modals/DateModal';
 import {Colors, Spacing} from '_styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -17,6 +17,8 @@ const SearchStack = createStackNavigator();
 const ProposeStack = createStackNavigator();
 const MessagesStack = createStackNavigator();
 const ProfileStack = createStackNavigator();
+
+const DateModalStack = createStackNavigator();
 
 const Tab = createMaterialBottomTabNavigator();
 const AppRootStackNavigator = createStackNavigator();
@@ -82,6 +84,15 @@ function MessagesStackScreen() {
     );
 }
 
+function DateModal() {
+  return(
+    <DateModalStack.Navigator headerMode="none">
+      <DateModalStack.Screen name="Calendar" component={Calendar} options={{gestureDirection:'vertical', cardStyleInterpolator : CardStyleInterpolators.forHorizontalIOS}}/>
+      <DateModalStack.Screen name="TimePicker" component={Time} options={{gestureDirection:'vertical', cardStyleInterpolator : CardStyleInterpolators.forHorizontalIOS}}/>
+    </DateModalStack.Navigator>
+  );
+}
+
 function TabNavigator(){
   return (
     <Tab.Navigator initialRouteName="Rides" screenOptions = {tab_opt}  barStyle={tab_style} activeColor={Colors.PRIMARY} inactiveColor={Colors.BLACK}>
@@ -93,13 +104,13 @@ function TabNavigator(){
     </Tab.Navigator>
   ) 
 }
-//<AppRootStackNavigator.Screen name="Modal" component={SearchModal} />
-{/* <AppRootStackNavigator.Screen name="RidesModal" component={Modal} /> */}
+
 const AppNavigator = ()=>{
     return (
         <AppRootStackNavigator.Navigator headerMode="none">
           <AppRootStackNavigator.Screen name="Tab" component={TabNavigator} />
           <AppRootStackNavigator.Screen name="TextInputModal" component={TextInputModal} options={{gestureDirection:'vertical', cardStyleInterpolator : CardStyleInterpolators.forVerticalIOS}}/>
+          <AppRootStackNavigator.Screen name="DateModal" component={DateModal} options={{gestureDirection:'vertical', cardStyleInterpolator : CardStyleInterpolators.forVerticalIOS}}/>
         </AppRootStackNavigator.Navigator>
         
     )

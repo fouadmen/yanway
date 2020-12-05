@@ -1,2 +1,3 @@
 import LocationSuggestions  from "./LocationSuggestions";
-export {LocationSuggestions}
+import TimePicker from './TimePicker'
+export {LocationSuggestions, TimePicker}
