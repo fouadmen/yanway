@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import {Colors} from '_styles';
-import { Text } from '_atoms';
+import Text from './Text';
 
 const _status = {
     "primary" : {backgroundColor: Colors.PRIMARY},

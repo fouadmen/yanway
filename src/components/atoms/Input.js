@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, TextInput } from 'react-native';
-import {Icon} from '_atoms';
+import Icon from './Icon';
 import {Mixins, Typography} from '_styles';
 
 const Input = ({placeholder, ext_style, backHandler, _onChangeText}) => {
