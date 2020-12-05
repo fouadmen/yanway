@@ -2,11 +2,12 @@ import * as React from 'react';
 import { createStackNavigator, CardStyleInterpolators  } from '@react-navigation/stack';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import RidesScreen from '_scenes/rides';
-import SearchScreen from '_scenes/search';
+import {SearchScreen,ResultsScreen} from '_scenes/search';
 import ProfileScreen from '_scenes/profile';
 import MessagesScreen from '_scenes/messages';
 import ProposeScreen from '_scenes/propose';
 import TextInputModal from '_modals/TextInputModal';
+import PassangersModal from '_modals/PassangersModal';
 import {Calendar, Time} from '_modals/DateModal';
 import {Colors, Spacing} from '_styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -52,11 +53,12 @@ function RideStackScreen() {
     );
 }
 
-function SearchStackScreen() {
+function SearchScreens() {
     return (
-        <RideStack.Navigator>
-        <RideStack.Screen name="Search" component={SearchScreen} /> 
-        </RideStack.Navigator>
+        <SearchStack.Navigator headerMode="none">
+          <SearchStack.Screen name="Search" component={SearchScreen} /> 
+          <SearchStack.Screen name="Results" component={ResultsScreen} /> 
+        </SearchStack.Navigator>
     );
 }
 
@@ -97,7 +99,7 @@ function TabNavigator(){
   return (
     <Tab.Navigator initialRouteName="Rides" screenOptions = {tab_opt}  barStyle={tab_style} activeColor={Colors.PRIMARY} inactiveColor={Colors.BLACK}>
         <Tab.Screen name="Rides" component={RidesScreen} />
-        <Tab.Screen name="Search" component={SearchScreen} />
+        <Tab.Screen name="Search" component={SearchScreens} />
         <Tab.Screen name="Propose" component={ProfileScreen} />
         <Tab.Screen name="Messages" component={MessagesScreen} />
         <Tab.Screen name="Profile" component={ProfileScreen} />
@@ -111,6 +113,7 @@ const AppNavigator = ()=>{
           <AppRootStackNavigator.Screen name="Tab" component={TabNavigator} />
           <AppRootStackNavigator.Screen name="TextInputModal" component={TextInputModal} options={{gestureDirection:'vertical', cardStyleInterpolator : CardStyleInterpolators.forVerticalIOS}}/>
           <AppRootStackNavigator.Screen name="DateModal" component={DateModal} options={{gestureDirection:'vertical', cardStyleInterpolator : CardStyleInterpolators.forVerticalIOS}}/>
+          <AppRootStackNavigator.Screen name="PassangersModal" component={PassangersModal} options={{gestureDirection:'vertical', cardStyleInterpolator : CardStyleInterpolators.forVerticalIOS}}/>
         </AppRootStackNavigator.Navigator>
         
     )
