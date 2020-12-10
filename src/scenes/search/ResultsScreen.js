@@ -30,7 +30,7 @@ const EmptyState = ({hasNoData, displayActivityIndicator}) => {
 const ResultsScreen = ({navigation}) => {
     const [DATA, setData] = React.useState([]);
     const [displayActivityIndicator, setDisplayActivityIndicator] = React.useState(true);
-    const renderItem = ({ item }) => (<ResultItem data={item} onPress={()=>{}}/>);
+    const renderItem = ({ item }) => (<ResultItem data={item} navigation={navigation}/>);
     const renderHeader = ()=>{
         if(DATA.length===0) return null;
         return (
@@ -46,10 +46,10 @@ const ResultsScreen = ({navigation}) => {
     }
 
     React.useEffect(() => {
-        let t = new Array(12).fill((data._id=String(Math.random()*100)))
+        let t = new Array(1).fill((data._id=String(Math.random()*100)))
         setTimeout(()=>{
             updateDate(t)
-        }, 2000);
+        }, 1000);
     }, []);
     
     return (

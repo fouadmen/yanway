@@ -1,2 +1,3 @@
 import ResultItem from './ResultItem';
-export {ResultItem};
+import Timeline from './Timeline';
+export {ResultItem, Timeline};

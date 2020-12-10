@@ -2,6 +2,7 @@ import React from 'react'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Feather from "react-native-vector-icons/Feather";
 import { TouchableOpacity, StyleSheet } from "react-native";
@@ -19,16 +20,20 @@ const _status = {
 const Icon = (props)=>{
     const {style, status, name, size, type, pressHandler, containerStyle, disabled} = props;
     let child = ""
+    let _style = StyleSheet.flatten([style, status ? _status[status] : _status['base'] ]);
+    let _size = size || 24;
     if(type==="AntDesign") {
-        child=()=> (<AntDesign style={StyleSheet.flatten([style, status ? _status[status] : _status['base'] ])} name={name} size={size || 24}/>)            
+        child=()=> (<AntDesign style={_style} name={name} size={_size}/>)            
     }else if(type==="FontAwesome"){
-        child= ()=> (<FontAwesome style={StyleSheet.flatten([style, status ? _status[status] : _status['base'] ])} name={name} size={size || 24}/>)
+        child= ()=> (<FontAwesome style={_style} name={name} size={_size}/>)
     }else if(type==="MaterialIcons"){
-        child = ()=>(<MaterialIcons style={StyleSheet.flatten([style, status ? _status[status] : _status['base'] ])} name={name} size={size || 24}/>)
+        child = ()=>(<MaterialIcons style={_style} name={name} size={_size}/>)
     }else if(type==="Feather"){
-        child=()=>(<Feather style={StyleSheet.flatten([style, status ? _status[status] : _status['base'] ])} name={name} size={size || 24}/>)
+        child=()=>(<Feather style={_style} name={name} size={_size}/>)
+    }else if(type=="FontAwesome5"){
+        child=()=>(<FontAwesome5 style={_style} name={name} size={_size}/>)
     }else{
-        child=()=>( <Ionicons style={StyleSheet.flatten([style, status ? _status[status] : _status['base'] ])} name={name} size={size || 24}/>)
+        child=()=>( <Ionicons style={_style} name={name} size={_size}/>)
     }
     return (
         <TouchableOpacity disabled={disabled} style={containerStyle} onPress={pressHandler}>

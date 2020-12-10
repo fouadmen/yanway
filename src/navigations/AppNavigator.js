@@ -8,6 +8,7 @@ import MessagesScreen from '_scenes/messages';
 import ProposeScreen from '_scenes/propose';
 import TextInputModal from '_modals/TextInputModal';
 import PassangersModal from '_modals/PassangersModal';
+import {RideDetail} from '_modals/RideDetailModal';
 import {Calendar, Time} from '_modals/DateModal';
 import {Colors, Spacing} from '_styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -20,6 +21,7 @@ const MessagesStack = createStackNavigator();
 const ProfileStack = createStackNavigator();
 
 const DateModalStack = createStackNavigator();
+const RideDetailStack = createStackNavigator();
 
 const Tab = createMaterialBottomTabNavigator();
 const AppRootStackNavigator = createStackNavigator();
@@ -95,6 +97,14 @@ function DateModal() {
   );
 }
 
+function RideDetailModal() {
+  return(
+    <RideDetailStack.Navigator headerMode="none">
+      <RideDetailStack.Screen name="RideDetail" component={RideDetail} />
+    </RideDetailStack.Navigator>
+  );
+}
+
 function TabNavigator(){
   return (
     <Tab.Navigator initialRouteName="Rides" screenOptions = {tab_opt}  barStyle={tab_style} activeColor={Colors.PRIMARY} inactiveColor={Colors.BLACK}>
@@ -114,6 +124,7 @@ const AppNavigator = ()=>{
           <AppRootStackNavigator.Screen name="TextInputModal" component={TextInputModal} options={{gestureDirection:'vertical', cardStyleInterpolator : CardStyleInterpolators.forVerticalIOS}}/>
           <AppRootStackNavigator.Screen name="DateModal" component={DateModal} options={{gestureDirection:'vertical', cardStyleInterpolator : CardStyleInterpolators.forVerticalIOS}}/>
           <AppRootStackNavigator.Screen name="PassangersModal" component={PassangersModal} options={{gestureDirection:'vertical', cardStyleInterpolator : CardStyleInterpolators.forVerticalIOS}}/>
+          <AppRootStackNavigator.Screen name="RideDetailModal" component={RideDetailModal}/>
         </AppRootStackNavigator.Navigator>
         
     )
