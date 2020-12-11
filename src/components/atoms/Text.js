@@ -29,9 +29,9 @@ const _weight = {
     "regular": {fontFamily: Typography.FONT_FAMILY_REGULAR},
 }
 
-const Text = ({style, category, status, weight, children}) => {
+const Text = ({style, category, status, weight, children, onPress}) => {
     return (
-        <_Text style={StyleSheet.flatten([styles.default, style, category ? categories[category ? category : 'h1'] : {}, status ? _status[status] : _status["base"], weight ? _weight[weight]: _weight['regular']  ])}>{children}</_Text>
+        <_Text onPress={ onPress ? onPress : null} style={StyleSheet.flatten([styles.default, style, category ? categories[category ? category : 'h1'] : {}, status ? _status[status] : _status["base"], weight ? _weight[weight]: _weight['regular']  ])}>{children}</_Text>
     );
 };
 

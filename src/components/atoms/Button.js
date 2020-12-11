@@ -9,10 +9,10 @@ const _status = {
     "warning": {backgroundColor: Colors.WARNING},
     "danger": {backgroundColor: Colors.ALERT}
 }
-const Button = ({children, status, callback})=>{
+const Button = ({children, status, onPress})=>{
     return (
         <View style={{borderRadius:24, overflow:'hidden'}}>
-            <Touchable onPress={callback}>
+            <Touchable onPress={onPress ? onPress : null}>
                 <View style={StyleSheet.flatten([styles.default, status ? _status[status] : _status['primary']])}>
                     <Text style={styles.textStyle} status='white' weight="medium" category="p">{children}</Text>
                 </View>

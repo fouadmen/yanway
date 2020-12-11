@@ -76,7 +76,7 @@ export default class Timeline extends PureComponent {
     return (
       <View style={timeWrapper}>
         <View style={[styles.timeContainer, this.props.timeContainerStyle]}>
-          <Text style={[styles.time, this.props.timeStyle]} category='p' weight='medium'>
+          <Text style={[styles.time, this.props.timeStyle]} category='h4' weight='medium'>
             {rowData.time}
           </Text>
         </View>

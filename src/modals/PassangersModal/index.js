@@ -23,7 +23,7 @@ const PassangersModal = ({navigation}) => {
                     <Icon disabled={seats>=8} status={seats>=8 ? "base" : "primary"} pressHandler={()=>change_number("+")} name="add-circle-outline" size={56}/>
                 </View>
             </View>
-            <FAB callback={()=>navigation.goBack()}/>
+            <FAB onPress={()=>navigation.goBack()}/>
         </Layout>
     )
 }

@@ -20,7 +20,7 @@ const Time = ({navigation}) => {
     <Layout>
         <Header navigation={navigation}/>
         <Text style={Mixins.header()} category="h1" weight='medium'>what time are you leaving ?</Text>
-        <TimePicker time={time} callback={()=>setShow(true)}/>
+        <TimePicker time={time} onPress={()=>setShow(true)}/>
         {show && (
             <DateTimePicker
             testID="dateTimePicker"
@@ -31,7 +31,7 @@ const Time = ({navigation}) => {
             onChange={onChange}
             />
         )}
-        <FAB callback={()=>navigation.navigate("Tab")}/>
+        <FAB onPress={()=>navigation.navigate("Tab")}/>
     </Layout>
   );
 };
