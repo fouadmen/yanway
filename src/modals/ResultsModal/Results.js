@@ -21,20 +21,21 @@ const EmptyState = ({hasNoData, displayActivityIndicator}) => {
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-            <Text>Create alarm</Text>
+            <Text>There are no rides yet for today between these cities</Text>
+            <Text>Create ride alarm</Text>
           </View>
       )  
     }
 };
 
-const ResultsScreen = ({navigation}) => {
+const Results = ({navigation}) => {
     const [DATA, setData] = React.useState([]);
     const [displayActivityIndicator, setDisplayActivityIndicator] = React.useState(true);
     const renderItem = ({ item }) => (<ResultItem data={item} navigation={navigation}/>);
     const renderHeader = ()=>{
         if(DATA.length===0) return null;
         return (
-            <Text style={{marginBottom:24}} category="h1" weight="medium">5 trajets</Text>
+            <Text style={{marginBottom:24}} category="h1" weight="medium">5 rides available</Text>
         )
     }
     const updateDate = (data)=>{  
@@ -118,4 +119,4 @@ var data = { //ride data not profile
 }
 
 
-export default ResultsScreen
+export default Results
