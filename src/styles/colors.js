@@ -6,7 +6,7 @@ export const GOLD = '#FFC700';
 export const TEXT_BASIC_COLOR = "#054752";
 export const TEXT_HINT_COLOR = "#708C91";
 // ACTIONS
-export const SUCCESS = '#3adb76';
+export const SUCCESS = '#5ED168';
 export const WARNING = '#ffae00';
 export const ALERT = '#cc4b37';
 
