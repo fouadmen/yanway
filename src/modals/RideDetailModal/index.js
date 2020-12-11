@@ -1,2 +1,5 @@
 import RideDetail from './RideDetail';
-export {RideDetail};
+import DriverProfile from './DriverProfile';
+import DriverRates from './DriverRates';
+
+export {RideDetail, DriverProfile, DriverRates};
