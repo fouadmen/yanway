@@ -1,14 +1,14 @@
 import React from 'react';
 import { View, StyleSheet, Dimensions } from 'react-native';
 import { Text, Icon } from '_atoms';
-import {Mixins, Colors, Typography} from '_styles';
+import { Colors } from '_styles';
 const width = Dimensions.get('screen').width
-const RecapHeader = ({y, navigation})=>{
+const RecapHeader = ({y, navigation, style})=>{
     // const search = useSelector(state=>state.search);
     // const top = y.interpolate({inputRange:[0,100], outputRange:[0,-70], extrapolateLeft:'clamp'}) 
     // const opacity = y.interpolate({inputRange:[0,50,100], outputRange:[1,0.5,0], extrapolateLeft:'clamp'}) 
     return(
-        <View style={styles.header}>
+        <View style={[styles.header, style]}>
             <Icon name="chevron-left" type="Feather" pressHandler={()=>navigation.pop()}/>
             <View style={styles.recap}>
                 <View style={{flexDirection:'row', alignItems:'center', width:0.71*width, overflow:'hidden'}}>
@@ -27,15 +27,13 @@ const styles = StyleSheet.create({
         display:"flex",
         flexDirection:"row",
         alignItems:"center",
-        width:'100%',
         justifyContent:'center',
-        alignSelf:"center",
         height:56,
         backgroundColor:Colors.GRAY_LIGHT,
         borderRadius:15,
         flexGrow:0,
         marginTop:14,
-        
+        marginHorizontal:24
     },
     recap:{
         marginLeft:10,

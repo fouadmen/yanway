@@ -48,11 +48,11 @@ const Detail = ({navigation})=>{
             <Divider style={{marginVertical:16}}/>
             <View>
                 <View style={styles.conditions}>
-                    <Icon style={{fontWeight:1}} name="checkcircleo" status="success" type="AntDesign" containerStyle={{marginRight:8}}/>
+                    <Icon style={{fontWeight:1}} name="checkcircleo" status="success" type="AntDesign" size={20} containerStyle={{marginRight:8}}/>
                     <Text category="p" status="hint">Tel number verified</Text>
                 </View>
                 <View style={styles.conditions}>
-                    <Icon name="closecircleo" status="danger" type="AntDesign" containerStyle={{marginRight:8}}/>
+                    <Icon name="closecircleo" status="danger" type="AntDesign" size={20} containerStyle={{marginRight:8}}/>
                     <Text category="p" status="hint">Email verified</Text>
                 </View>
             </View>

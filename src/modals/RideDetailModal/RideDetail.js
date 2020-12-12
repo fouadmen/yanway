@@ -98,12 +98,7 @@ const RideDetail = ({navigation}) => {
             </Timeline>
             <View style={{height:96, width:WIDTH, borderTopColor:Colors.GRAY_LIGHT, borderTopWidth:1, flexDirection:'column', justifyContent:'center'}}>
                 <View style={styles.button}><Button style={{borderRadius:20}} textStyle={{fontSize:16, color:'Black'}} onPress={()=>console.log(navigation.navigate("CheckoutModal"))}> Continue </Button></View>
-            </View>
-                {/* <Divider style={{height:8}}/> */}
-                {/* <View>passangers </View> */}
-                {/* <Divider style={{height:8}}/> */}
-                {/* <Text>Signal this ride</Text> */}                   
-
+            </View>                
         </Layout>
     )
 }

@@ -43,7 +43,7 @@ const RatingItem = ({profile})=>{
                 <Text category="h3">Cassandre</Text>
                 <View style={{height:48, width:48, borderRadius:24, backgroundColor:'red', marginVertical:24}}/>
             </View>
-            <Text category="p">Parfait</Text>
+            <Text category="p">Outstanding</Text>
             <Text status="hint" style={{marginVertical:8}}>
                Duis in fugiat id eu excepteur esse velit minim ut irure. Aliquip elit id voluptate sit nisi Lorem velit nost. 
             </Text>
