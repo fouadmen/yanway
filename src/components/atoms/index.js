@@ -7,4 +7,7 @@ import Button from './Button';
 import Header from './Header';
 import FAB from './FAB';
 import Touchable from './Touchable';
-export {Input, Divider, Icon, Layout, Text, Button, Header, FAB, Touchable};
+import Radio from './Radio';
+import RadioGroup from './RadioGroup';
+import Checkbox from './Checkbox';
+export {Input, Divider, Icon, Layout, Text, Button, Header, FAB, Touchable, Radio, RadioGroup, Checkbox};

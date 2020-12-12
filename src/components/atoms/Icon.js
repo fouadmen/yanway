@@ -5,7 +5,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Feather from "react-native-vector-icons/Feather";
-import { TouchableOpacity, StyleSheet } from "react-native";
+import { TouchableOpacity, StyleSheet, View } from "react-native";
 import {Colors} from '_styles';
 
 const _status = {
@@ -19,29 +19,31 @@ const _status = {
 }
 const Icon = (props)=>{
     const {style, status, name, size, type, pressHandler, containerStyle, disabled} = props;
-    let child = ""
+    let _Icon = ""
     let _style = StyleSheet.flatten([style, status ? _status[status] : _status['base'] ]);
     let _size = size || 24;
-    if(type==="AntDesign") {
-        child=()=> (<AntDesign style={_style} name={name} size={_size}/>)            
-    }else if(type==="FontAwesome"){
-        child= ()=> (<FontAwesome style={_style} name={name} size={_size}/>)
-    }else if(type==="MaterialIcons"){
-        child = ()=>(<MaterialIcons style={_style} name={name} size={_size}/>)
-    }else if(type==="Feather"){
-        child=()=>(<Feather style={_style} name={name} size={_size}/>)
-    }else if(type=="FontAwesome5"){
-        child=()=>(<FontAwesome5 style={_style} name={name} size={_size}/>)
-    }else{
-        child=()=>( <Ionicons style={_style} name={name} size={_size}/>)
-    }
-    return (
-        <TouchableOpacity disabled={disabled} style={containerStyle} onPress={pressHandler}>
-            {child()}
-        </TouchableOpacity>
-    );
 
-    
+    if(type==="AntDesign") {
+        _Icon=()=> (<AntDesign style={_style} name={name} size={_size}/>)            
+    }else if(type==="FontAwesome"){
+        _Icon= ()=> (<FontAwesome style={_style} name={name} size={_size}/>)
+    }else if(type==="MaterialIcons"){
+        _Icon = ()=>(<MaterialIcons style={_style} name={name} size={_size}/>)
+    }else if(type==="Feather"){
+        _Icon=()=>(<Feather style={_style} name={name} size={_size}/>)
+    }else if(type=="FontAwesome5"){
+        _Icon=()=>(<FontAwesome5 style={_style} name={name} size={_size}/>)
+    }else{
+        _Icon=()=>( <Ionicons style={_style} name={name} size={_size}/>)
+    }
+
+    if (pressHandler) {
+        return (
+            <TouchableOpacity disabled={disabled} style={containerStyle} onPress={pressHandler}>{_Icon()}</TouchableOpacity>
+        );
+    }
+
+    return <View style={containerStyle}><_Icon /></View> 
 }
 
 export default Icon;
