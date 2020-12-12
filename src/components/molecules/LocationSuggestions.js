@@ -35,10 +35,10 @@ const LocationSuggestions = (props)=>{
             }
         };
     
-        const req = base_url +"components=country:ma&"+ Qs.stringify({
+        const req = base_url +"components=country:jp&"+ Qs.stringify({
             input : query,
             key : key,
-            language : 'fr',
+            language : 'jp',
             session : session,
             types: "(cities)"
         })
