@@ -1,6 +1,6 @@
 import React from 'react';
-import { FlatList, View, ActivityIndicator, Platform } from 'react-native';
-import { Text, Layout } from '_atoms';
+import { FlatList, View, ActivityIndicator, Platform, Dimensions } from 'react-native';
+import { Text, Layout, Button } from '_atoms';
 import {RecapHeader} from '_molecules';
 import {ResultItem} from '_organisms';
 import {Colors} from '_styles';
@@ -54,19 +54,23 @@ const Results = ({navigation}) => {
     }, []);
     
     return (
-        <Layout style={{ overflow: "visible" }}>
+        <Layout style={{paddingHorizontal:0}}>
             <RecapHeader navigation={navigation}/>
-            
             <FlatList
                 data={DATA}
                 renderItem={renderItem}
-                keyExtractor={item => item._id}
+                keyExtractor={(item, i) => ""+i}
                 showsVerticalScrollIndicator={false}
                 ListHeaderComponent={renderHeader}
                 ListHeaderComponentStyle={{marginTop:24}}
                 ListEmptyComponent={()=><EmptyState hasNoData={DATA.length===0} displayActivityIndicator={displayActivityIndicator}/>}
+                contentContainerStyle={{marginHorizontal:24}}
                 extraData={DATA}
             />
+            <View style={{height:88, borderTopColor:Colors.GRAY_LIGHT, borderTopWidth:1, flexDirection:'row', alignItems:'center', justifyContent:'space-between', paddingHorizontal:24}}>
+                <Text category="p" status="hint">16 rides available</Text>
+                <Text onPress={()=>navigation.navigate("Filter")} category="h4" status="primary">Filter</Text>
+            </View>
         </Layout>
     )
 }
