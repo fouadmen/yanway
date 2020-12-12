@@ -30,7 +30,14 @@ const ResultsStack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
 const AppRootStackNavigator = createStackNavigator();
 
-const verticalInterpolation = {gestureDirection:'vertical', cardStyleInterpolator : CardStyleInterpolators.forVerticalIOS}
+const config = {
+  animation: 'timing',
+  config: {
+    duration : 500
+  },
+};
+
+const verticalInterpolation = {gestureDirection:'vertical', cardStyleInterpolator : CardStyleInterpolators.forVerticalIOS, transitionSpec:{open: config, close: config}}
 const horizotalInterpolation = {gestureDirection:'vertical', cardStyleInterpolator : CardStyleInterpolators.forHorizontalIOS}
 const tab_opt = ({ route }) => ({
     tabBarIcon: ({ focused, color, size }) => {
@@ -117,7 +124,7 @@ function CheckoutModal() {
     <CheckoutStack.Navigator headerMode="none">
       <CheckoutStack.Screen name="Summary" component={Summary}/>
       <CheckoutStack.Screen name="CheckoutMethod" component={CheckoutMethod}/>
-      <CheckoutStack.Screen name="TotalBreakDown" component={TotalBreakDown} options={{verticalInterpolation}}/>
+      <CheckoutStack.Screen name="TotalBreakDown" component={TotalBreakDown} options={verticalInterpolation}/>
     </CheckoutStack.Navigator>
   );
 }
@@ -126,7 +133,7 @@ function ResultsModal() {
   return (
     <ResultsStack.Navigator headerMode="none">
       <ResultsStack.Screen name="Results" component={Results}/>
-      <ResultsStack.Screen name="Filter" component={Filter} options={{verticalInterpolation}}/>
+      <ResultsStack.Screen name="Filter" component={Filter} options={verticalInterpolation}/>
     </ResultsStack.Navigator>
   );
 }
@@ -147,9 +154,9 @@ const AppNavigator = ()=>{
     return (
         <AppRootStackNavigator.Navigator headerMode="none">
           <AppRootStackNavigator.Screen name="Tab" component={TabNavigator} />
-          <AppRootStackNavigator.Screen name="TextInputModal" component={TextInputModal} options={{verticalInterpolation}}/>
-          <AppRootStackNavigator.Screen name="DateModal" component={DateModal} options={{verticalInterpolation}}/>
-          <AppRootStackNavigator.Screen name="PassangersModal" component={PassangersModal} options={{verticalInterpolation}}/>
+          <AppRootStackNavigator.Screen name="TextInputModal" component={TextInputModal} options={verticalInterpolation}/>
+          <AppRootStackNavigator.Screen name="DateModal" component={DateModal} options={verticalInterpolation}/>
+          <AppRootStackNavigator.Screen name="PassangersModal" component={PassangersModal} options={verticalInterpolation}/>
           <AppRootStackNavigator.Screen name="RideDetailModal" component={RideDetailModal}/>
           <AppRootStackNavigator.Screen name="CheckoutModal" component={CheckoutModal}/>
           <AppRootStackNavigator.Screen name="ResultsModal" component={ResultsModal}/>
