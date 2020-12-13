@@ -22,8 +22,8 @@ const ConfimationModal = ({navigation}) => {
     },[navigation])
 
     const navigate = () => {
-        immersiveMode(false);
         navigation.navigate("Rides");
+        immersiveMode(false);
     }
 
     return (
