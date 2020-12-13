@@ -10,7 +10,8 @@ const categories = {
     's1': {fontSize: Typography.FONT_SIZE_14},
     's2': {fontSize: Typography.FONT_SIZE_13},
     's3': {fontSize: Typography.FONT_SIZE_12},
-    'p': {fontSize: Typography.FONT_SIZE_16}
+    'p': {fontSize: Typography.FONT_SIZE_16},
+    'extra': {fontSize: Typography.FONT_SIZE_80}
 }
 
 const _status = {

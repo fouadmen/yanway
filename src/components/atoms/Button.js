@@ -7,14 +7,16 @@ const _status = {
     "primary" : {backgroundColor: Colors.PRIMARY},
     "success": {backgroundColor: Colors.SUCCESS},
     "warning": {backgroundColor: Colors.WARNING},
-    "danger": {backgroundColor: Colors.ALERT}
+    "danger": {backgroundColor: Colors.ALERT},
+    "white": {backgroundColor: Colors.WHITE}
 }
-const Button = ({children, status, onPress})=>{
+const Button = ({children, status, onPress, textStatus})=>{
+    console.log("stats : ", _status[textStatus]);
     return (
         <View style={{borderRadius:24, overflow:'hidden'}}>
             <Touchable onPress={onPress ? onPress : null}>
                 <View style={StyleSheet.flatten([styles.default, status ? _status[status] : _status['primary']])}>
-                    <Text style={styles.textStyle} status='white' weight="medium" category="p">{children}</Text>
+                    <Text style={styles.textStyle} status={textStatus ? textStatus : 'white'} weight="medium" category="p">{children}</Text>
                 </View>
             </Touchable>
         </View> 
@@ -29,8 +31,7 @@ const styles = StyleSheet.create({
         borderRadius:24
     },
     textStyle:{
-        color:'#fff',
-        lineHeight:18
+        lineHeight:18,
     }
 })
 export default Button;

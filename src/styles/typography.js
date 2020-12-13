@@ -6,6 +6,7 @@ export const FONT_FAMILY_MEDIUM = 'GTEesti-Medium';
 export const FONT_FAMILY_BOLD = 'GTEesti-Bold';
 
 // FONT SIZE
+export const FONT_SIZE_80 = scaleFont(80);
 export const FONT_SIZE_32 = scaleFont(32);
 export const FONT_SIZE_28 = scaleFont(28);
 export const FONT_SIZE_24 = scaleFont(24);
