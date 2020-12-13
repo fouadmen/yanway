@@ -143,7 +143,7 @@ function ResultsModal() {
 
 function OfferModal() {
   return (
-    <OfferStack.Navigator initialRouteName="StartModal" headerMode="none" mode="modal">
+    <OfferStack.Navigator initialRouteName="ConfimationModal" headerMode="none" mode="modal">
       <OfferStack.Screen name="StartModal" component={StartModal}/>
       <OfferStack.Screen name="DestinationModal" component={DestinationModal} options={horizotalInterpolation}/>
       <OfferStack.Screen name="StopoversModal" component={StopoversModal} options={horizotalInterpolation}/>
@@ -153,7 +153,7 @@ function OfferModal() {
       <OfferStack.Screen name="PassangersModal" component={PassangersModal} initialParams={{nextScreen : "InstantApprovalModal"}}  options={horizotalInterpolation}/>
       <OfferStack.Screen name="InstantApprovalModal" component={InstantApprovalModal} options={horizotalInterpolation}/>
       <OfferStack.Screen name="PriceSuggestionModal" component={PriceSuggestionModal} options={horizotalInterpolation}/>
-      <OfferStack.Screen name="RoundTripModal" component={RoundTripModal} options={horizotalInterpolation}/>
+      {/* <OfferStack.Screen name="RoundTripModal" component={RoundTripModal} options={horizotalInterpolation}/> */}
       <OfferStack.Screen name="NoteModal" component={NoteModal} options={horizotalInterpolation}/>
       <OfferStack.Screen name="ConfimationModal" component={ConfimationModal} options={horizotalInterpolation}/>
     </OfferStack.Navigator>
