@@ -11,8 +11,9 @@ import PassangersModal from '_modals/PassangersModal';
 import {Results, Filter} from '_modals/ResultsModal'
 import {RideDetail, DriverProfile, DriverRates} from '_modals/RideDetailModal';
 import {Summary, TotalBreakDown, CheckoutMethod} from '_modals/CheckoutModal';
+import { StartModal, DestinationModal, StopoversModal, BackSeatsModal, InstantApprovalModal, PriceSuggestionModal, RoundTripModal, NoteModal, ConfimationModal } from "_modals/RideOfferModal";
 import {Calendar, Time} from '_modals/DateModal';
-import {Colors, Spacing} from '_styles';
+import {Colors} from '_styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
@@ -27,6 +28,8 @@ const RideDetailStack = createStackNavigator();
 const CheckoutStack = createStackNavigator();
 const ResultsStack = createStackNavigator();
 
+const OfferStack = createStackNavigator();
+
 const Tab = createMaterialBottomTabNavigator();
 const AppRootStackNavigator = createStackNavigator();
 
@@ -37,7 +40,7 @@ const config = {
   },
 };
 
-const verticalInterpolation = {gestureDirection:'vertical', cardStyleInterpolator : CardStyleInterpolators.forVerticalIOS, transitionSpec:{open: config, close: config}}
+const verticalInterpolation = {animationEnabled: true, gestureDirection:'vertical', cardStyleInterpolator : CardStyleInterpolators.forVerticalIOS, transitionSpec:{open: config, close: config}}
 const horizotalInterpolation = {gestureDirection:'vertical', cardStyleInterpolator : CardStyleInterpolators.forHorizontalIOS}
 const tab_opt = ({ route }) => ({
     tabBarIcon: ({ focused, color, size }) => {
@@ -47,7 +50,7 @@ const tab_opt = ({ route }) => ({
         iconName = "home-outline"
       } else if (route.name === 'Search') {
         iconName = "search";
-      } else if(route.name === 'Propose'){
+      } else if(route.name === 'Offer'){
         iconName = "add-circle-outline"
       } else if(route.name === 'Messages'){
         iconName = "chatbubbles-outline"
@@ -138,12 +141,36 @@ function ResultsModal() {
   );
 }
 
+function OfferModal() {
+  return (
+    <OfferStack.Navigator initialRouteName="RoundTripModal" headerMode="none" mode="modal">
+      <OfferStack.Screen name="StartModal" component={StartModal}/>
+      <OfferStack.Screen name="DestinationModal" component={DestinationModal} options={horizotalInterpolation}/>
+      <OfferStack.Screen name="StopoversModal" component={StopoversModal} options={horizotalInterpolation}/>
+      <OfferStack.Screen name="Calendar" initialParams={{notFirst : true}} component={Calendar} options={horizotalInterpolation}/>
+      <OfferStack.Screen name="TimePicker" initialParams={{nextScreen : "BackSeatsModal"}} component={Time} options={horizotalInterpolation}/>
+      <OfferStack.Screen name="BackSeatsModal" component={BackSeatsModal} options={horizotalInterpolation}/>
+      <OfferStack.Screen name="PassangersModal" component={PassangersModal} initialParams={{nextScreen : "InstantApprovalModal"}}  options={horizotalInterpolation}/>
+      <OfferStack.Screen name="InstantApprovalModal" component={InstantApprovalModal} options={horizotalInterpolation}/>
+      <OfferStack.Screen name="PriceSuggestionModal" component={PriceSuggestionModal} options={horizotalInterpolation}/>
+      <OfferStack.Screen name="RoundTripModal" component={RoundTripModal} options={horizotalInterpolation}/>
+      <OfferStack.Screen name="NoteModal" component={NoteModal} options={horizotalInterpolation}/>
+      <OfferStack.Screen name="ConfimationModal" component={ConfimationModal} options={horizotalInterpolation}/>
+    </OfferStack.Navigator>
+  );
+}
+
 function TabNavigator(){
   return (
     <Tab.Navigator initialRouteName="Rides" screenOptions = {tab_opt}  barStyle={tab_style} activeColor={Colors.PRIMARY} inactiveColor={Colors.BLACK}>
         <Tab.Screen name="Rides" component={RidesScreen} />
         <Tab.Screen name="Search" component={SearchScreens} />
-        <Tab.Screen name="Propose" component={ProfileScreen} />
+        <Tab.Screen name="Offer" component={ProposeScreen} listeners={({navigation})=>({
+          tabPress: event=>{
+            event.preventDefault();
+            navigation.navigate("OfferModal")
+          }
+        })}/>
         <Tab.Screen name="Messages" component={MessagesScreen} />
         <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
@@ -160,6 +187,7 @@ const AppNavigator = ()=>{
           <AppRootStackNavigator.Screen name="RideDetailModal" component={RideDetailModal}/>
           <AppRootStackNavigator.Screen name="CheckoutModal" component={CheckoutModal}/>
           <AppRootStackNavigator.Screen name="ResultsModal" component={ResultsModal}/>
+          <AppRootStackNavigator.Screen name="OfferModal" component={OfferModal} options={verticalInterpolation}/>
         </AppRootStackNavigator.Navigator>
         
     )

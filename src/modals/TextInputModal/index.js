@@ -1,7 +1,6 @@
 import React from 'react';
-import {Input} from '_atoms';
 import { LocationSuggestions } from "_molecules";
-import {Layout} from "_atoms";
+import {Layout, Input} from "_atoms";
 
 const TextInputModal = ({navigation})=>{
     const [location, setLocation] = React.useState('');

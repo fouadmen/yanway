@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import {Colors, Mixins} from '_styles';
+import { Mixins } from '_styles';
 import {Icon, Text, Layout, Header, FAB} from '_atoms';
-const PassangersModal = ({navigation}) => {
+const PassangersModal = ({route, navigation}) => {
     const [seats, setSeats] = React.useState(1);
     const change_number = (op)=>{
         let s = seats;
@@ -12,10 +12,11 @@ const PassangersModal = ({navigation}) => {
             setSeats(--s);
         }
     }
+    const {nextScreen, headerTitle} = route.params;
     return (
         <Layout>
             <Header navigation={navigation}/>
-            <Text style={Mixins.header()} category="h1" weight='medium'>Number of seats you wish to reserve</Text>
+            <Text style={Mixins.header()} category="h1" weight='medium'>{headerTitle ? headerTitle : "Number of seats you wish to reserve"}</Text>
             <View>
                 <View style={styles.search_bar}>
                     <Icon disabled={seats===1} status={seats===1 ? "base" : "primary"} pressHandler={()=>change_number("-")} name="remove-circle-outline" size={56}/>
@@ -23,7 +24,7 @@ const PassangersModal = ({navigation}) => {
                     <Icon disabled={seats>=8} status={seats>=8 ? "base" : "primary"} pressHandler={()=>change_number("+")} name="add-circle-outline" size={56}/>
                 </View>
             </View>
-            <FAB onPress={()=>navigation.goBack()}/>
+            <FAB onPress={ nextScreen ? ()=>navigation.navigate(nextScreen) :  ()=>navigation.goBack()}/>
         </Layout>
     )
 }

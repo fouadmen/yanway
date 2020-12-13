@@ -1,11 +1,8 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React from 'react';
 
-const Propose = () => {
+const Propose = ({navigation}) => {
     return (
-        <View>
-            <Text>Hi</Text>
-        </View>
+        <></>
     )
 }
 

@@ -6,7 +6,7 @@ import {TimePicker} from '_molecules';
 
 import {Mixins} from '_styles';
 
-const Time = ({navigation}) => {
+const Time = ({route, navigation}) => {
   const [time, setTime] = useState((new Date()).setHours(8,0,0));
   const [show, setShow] = useState(false);
 
@@ -31,7 +31,7 @@ const Time = ({navigation}) => {
             onChange={onChange}
             />
         )}
-        <FAB onPress={()=>navigation.navigate("Tab")}/>
+        <FAB onPress={()=>navigation.navigate(route.params?.nextScreen ? route.params.nextScreen : "Tab")}/>
     </Layout>
   );
 };

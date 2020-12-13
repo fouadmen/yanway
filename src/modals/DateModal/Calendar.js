@@ -14,7 +14,7 @@ function getInitialState() {
   return  inialState;
 }
 
-const Calendar = ({navigation}) => {
+const Calendar = ({route, navigation}) => {
   const [makedDates, setMarked] = React.useState(getInitialState());
   const [selectedDate, setDate] = React.useState(new Date());
   const changeDate=(day)=>{
@@ -26,7 +26,7 @@ const Calendar = ({navigation}) => {
   }
   return (
     <Layout>
-      <Header first navigation={navigation}/>
+      <Header first={true ? false : true} navigation={navigation}/>
       <Text style={Mixins.header()} category="h1" weight='medium'>When are you leaving?</Text>
       <CalendarList 
         selected={selectedDate}

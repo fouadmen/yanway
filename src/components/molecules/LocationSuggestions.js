@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, TouchableWithoutFeedback} from 'react-native';
 import {Colors, Mixins} from '_styles';
 import {Divider, Text, Icon} from '_atoms';
 import Qs from 'qs';
@@ -51,16 +51,18 @@ const LocationSuggestions = (props)=>{
         <View style={{marginTop:-16}}>
             {suggestions.map((l,i)=>{
                 return (
-                    <>
-                        <View onPress={()=>onChoose({description : l.description, place_id : l.place_id})}  style={{height:92, flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
-                            <View style={{flexDirection:'column', justifyContent:'center'}}>
-                                <Text status='base' weight="medium" category="h4">{l.description}</Text>
-                                <Text status='hint' weight="medium" category="p">Tokyo</Text>
+                    <TouchableWithoutFeedback onPress={()=>onChoose({description : l.description, place_id : l.place_id})}>
+                        <View>
+                            <View style={{height:92, flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
+                                <View style={{flexDirection:'column', justifyContent:'center'}}>
+                                    <Text status='base' weight="medium" category="h4">{l.description}</Text>
+                                    <Text status='hint' weight="medium" category="p">Tokyo</Text>
+                                </View>
+                                <Icon style={{marginRight:-6}} name="chevron-right" type="Feather" />
                             </View>
-                            <Icon style={{marginRight:-6}} name="chevron-right" type="Feather" />
+                            <Divider />
                         </View>
-                        <Divider />
-                    </>
+                    </TouchableWithoutFeedback>
                 )
             })}
         </View>

@@ -9,12 +9,12 @@ const Search = ({navigation}) => {
         <Layout >
             <Text style={Mixins.header()} category="h1" weight='medium'>Where are you going ?</Text>
             <View style={styles.inputs}>
-               <View style={styles.input}><TouchableWithoutFeedback onPress={() => navigation.navigate('TextInputModal',{target:''})} ><View><Text style={{marginVertical:16, marginHorizontal:16}} status='hint' category="h4" weight='regular'>Leaving from</Text></View></TouchableWithoutFeedback></View>
-               <View style={styles.input}><TouchableWithoutFeedback onPress={() => navigation.navigate('TextInputModal',{target:''})} ><View><Text style={{marginVertical:16, marginHorizontal:16}} status='hint' category="h4" weight='regular'>Going to</Text></View></TouchableWithoutFeedback></View>
+               <View style={styles.input}><TouchableWithoutFeedback onPress={() => navigation.navigate('TextInputModal',{"target":''})} ><View><Text style={{marginVertical:16, marginHorizontal:16}} status='hint' category="h4" weight='regular'>Leaving from</Text></View></TouchableWithoutFeedback></View>
+               <View style={styles.input}><TouchableWithoutFeedback onPress={() => navigation.navigate('TextInputModal',{"target":''})} ><View><Text style={{marginVertical:16, marginHorizontal:16}} status='hint' category="h4" weight='regular'>Going to</Text></View></TouchableWithoutFeedback></View>
             </View>
             <Divider />
             <View style={{display:'flex', flexDirection:'row', justifyContent:'space-between', marginVertical:24}}>
-              <View><TouchableWithoutFeedback onPress={() => navigation.navigate('DateModal',{target:''})}><View><Text status='primary' weight="regular" category="h4">Sat. dec 05., 08:00</Text></View></TouchableWithoutFeedback></View>
+              <View><TouchableWithoutFeedback onPress={() => navigation.navigate('DateModal',{screen:'Calendar', params:{ target:''}})}><View><Text status='primary' weight="regular" category="h4">Sat. dec 05., 08:00</Text></View></TouchableWithoutFeedback></View>
               <View><TouchableWithoutFeedback onPress={() => navigation.navigate('PassangersModal',{target:''})}><View><Text status='primary' weight="regular" category="h4">1 passanger</Text></View></TouchableWithoutFeedback></View>
             </View>
             <Divider />
