@@ -143,7 +143,7 @@ function ResultsModal() {
 
 function OfferModal() {
   return (
-    <OfferStack.Navigator initialRouteName="ConfimationModal" headerMode="none" mode="modal">
+    <OfferStack.Navigator initialRouteName="StartModal" headerMode="none" mode="modal">
       <OfferStack.Screen name="StartModal" component={StartModal}/>
       <OfferStack.Screen name="DestinationModal" component={DestinationModal} options={horizotalInterpolation}/>
       <OfferStack.Screen name="StopoversModal" component={StopoversModal} options={horizotalInterpolation}/>
@@ -163,16 +163,16 @@ function OfferModal() {
 function TabNavigator(){
   return (
     <Tab.Navigator initialRouteName="Rides" screenOptions = {tab_opt}  barStyle={tab_style} activeColor={Colors.PRIMARY} inactiveColor={Colors.BLACK}>
-        <Tab.Screen name="Rides" component={RidesScreen} />
-        <Tab.Screen name="Search" component={SearchScreens} />
-        <Tab.Screen name="Offer" component={ProposeScreen} listeners={({navigation})=>({
+        <Tab.Screen name="Rides" options={{title:'Your rides'}} component={RidesScreen} />
+        <Tab.Screen name="Search" options={{title:'Search'}} component={SearchScreens} />
+        <Tab.Screen name="Offer" options={{title:'Offer'}} component={ProposeScreen} listeners={({navigation})=>({
           tabPress: event=>{
             event.preventDefault();
             navigation.navigate("OfferModal")
           }
         })}/>
-        <Tab.Screen name="Messages" component={MessagesScreen} />
-        <Tab.Screen name="Profile" component={ProfileScreen} />
+        <Tab.Screen name="Messages" options={{title:'Inbox'}} component={MessagesScreen} />
+        <Tab.Screen name="Profile" options={{title:'Profile'}} component={ProfileScreen} />
     </Tab.Navigator>
   ) 
 }
