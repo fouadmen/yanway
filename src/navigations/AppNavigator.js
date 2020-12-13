@@ -143,7 +143,7 @@ function ResultsModal() {
 
 function OfferModal() {
   return (
-    <OfferStack.Navigator initialRouteName="RoundTripModal" headerMode="none" mode="modal">
+    <OfferStack.Navigator initialRouteName="StartModal" headerMode="none" mode="modal">
       <OfferStack.Screen name="StartModal" component={StartModal}/>
       <OfferStack.Screen name="DestinationModal" component={DestinationModal} options={horizotalInterpolation}/>
       <OfferStack.Screen name="StopoversModal" component={StopoversModal} options={horizotalInterpolation}/>
