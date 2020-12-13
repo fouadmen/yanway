@@ -7,7 +7,7 @@ const NoteModal = ({navigation}) => {
     const _onChangeText = ()=>{}
     return (
         <Layout>
-            <Header first navigation={navigation}/>
+            <Header navigation={navigation}/>
             <Text style={Mixins.header()} category="h1" weight='medium'>What are your preferences ?</Text>
             <Input
                 _onChangeText = {_onChangeText}
