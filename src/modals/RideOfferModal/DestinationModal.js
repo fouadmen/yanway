@@ -8,7 +8,7 @@ const DestinationModal = ({navigation}) => {
     const [displayList, setDisplayList] =  React.useState(false) ;
 
     const onChoose = ()=>{
-        navigation.navigate("StopoversModal")
+        navigation.navigate("Calendar")
     }
     const textChangeHandler = (text)=>{
         setLocation(text);

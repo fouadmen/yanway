@@ -11,7 +11,7 @@ import PassangersModal from '_modals/PassangersModal';
 import {Results, Filter} from '_modals/ResultsModal'
 import {RideDetail, DriverProfile, DriverRates} from '_modals/RideDetailModal';
 import {Summary, TotalBreakDown, CheckoutMethod} from '_modals/CheckoutModal';
-import { StartModal, DestinationModal, StopoversModal, BackSeatsModal, InstantApprovalModal, PriceSuggestionModal, RoundTripModal, NoteModal, ConfimationModal } from "_modals/RideOfferModal";
+import { StartModal, DestinationModal, StopoversModal, BackSeatsModal, InstantApprovalModal, PriceSuggestionModal, NoteModal, ConfimationModal, PriceAdjustmentModal } from "_modals/RideOfferModal";
 import {Calendar, Time} from '_modals/DateModal';
 import {Colors} from '_styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -61,7 +61,7 @@ const tab_opt = ({ route }) => ({
     }
 });
 
-const tab_style = { backgroundColor: Colors.WHITE, borderTopColor:Colors.PRIMARY, borderTopWidth:2  }
+const tab_style = { backgroundColor: Colors.WHITE, borderTopColor:Colors.GRAY_LIGHT, borderTopWidth:1  }
 
 function RideStackScreen() {
     return (
@@ -153,7 +153,7 @@ function OfferModal() {
       <OfferStack.Screen name="PassangersModal" component={PassangersModal} initialParams={{nextScreen : "InstantApprovalModal"}}  options={horizotalInterpolation}/>
       <OfferStack.Screen name="InstantApprovalModal" component={InstantApprovalModal} options={horizotalInterpolation}/>
       <OfferStack.Screen name="PriceSuggestionModal" component={PriceSuggestionModal} options={horizotalInterpolation}/>
-      {/* <OfferStack.Screen name="RoundTripModal" component={RoundTripModal} options={horizotalInterpolation}/> */}
+      <OfferStack.Screen name="PriceAdjustmentModal" component={PriceAdjustmentModal} options={horizotalInterpolation}/>
       <OfferStack.Screen name="NoteModal" component={NoteModal} options={horizotalInterpolation}/>
       <OfferStack.Screen name="ConfimationModal" component={ConfimationModal} options={horizotalInterpolation}/>
     </OfferStack.Navigator>

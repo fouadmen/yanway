@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, NativeModules, Platform } from 'react-native';
-import {Layout, Header, Text, Button, Input } from '_atoms';
+import {Layout, Text, Button } from '_atoms';
 import {Colors} from '_styles';
 
 const ConfimationModal = ({navigation}) => {
@@ -16,7 +16,7 @@ const ConfimationModal = ({navigation}) => {
 
     React.useEffect(()=>{
         navigation.addListener('beforeRemove',(e)=>{
-            e.preventDefault();
+            immersiveMode(false);
         })
         immersiveMode(true);
     },[navigation])

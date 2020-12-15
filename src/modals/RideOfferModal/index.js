@@ -6,5 +6,6 @@ import InstantApprovalModal from './InstantApprovalModal';
 import PriceSuggestionModal from "./PriceSuggestionModal";
 import RoundTripModal from "./RoundTripModal";
 import NoteModal from './NoteModal';
-import ConfimationModal from './ConfimationModal'
-export {StartModal, DestinationModal, StopoversModal, BackSeatsModal, InstantApprovalModal, PriceSuggestionModal, RoundTripModal, NoteModal, ConfimationModal};
+import ConfimationModal from './ConfimationModal';
+import PriceAdjustmentModal from "./PriceAdjustmentModal";
+export {StartModal, DestinationModal, StopoversModal, BackSeatsModal, InstantApprovalModal, PriceSuggestionModal, RoundTripModal, NoteModal, ConfimationModal, PriceAdjustmentModal};
