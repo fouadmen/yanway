@@ -1,23 +1,45 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, TouchableWithoutFeedback, Dimensions, Image } from 'react-native';
+import { Icon, Layout, Text } from '_atoms';
+
+const ratio = 600/390;
+const CARD_WIDTH = Dimensions.get("screen").width;
+const CARD_HEIGHT = CARD_WIDTH * ratio;
 
 const Rides = () => {
     return (
-        <View style={styles.container} level='1'>
-            <Text style={styles.header} category="h3">Where are you going ?</Text>
-        </View>
+        <Layout style={styles.container}>
+            <Text style={styles.header} status="white" weight="medium" category="h1">Your ride. Your choice.</Text>
+            <Image style={styles.img} source={require('../../assets/images/LandingImage.png')} />
+            <View style={{height:56,flexDirection:'row'}}>
+              <TouchableWithoutFeedback onPress={()=>{}}>
+                  <View style={{flexDirection:"row", justifyContent:'space-between', alignItems:'center', flex:1, paddingHorizontal:24}}>
+                      <Text category="h3">See archived rides</Text>
+                      <Icon name="chevron-right" type="Feather"/>
+                  </View>
+              </TouchableWithoutFeedback>
+            </View>
+        </Layout>
+        
+
     );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
-    flexDirection: 'column',
+    paddingHorizontal:0,
   },
   header: {
-    marginBottom:40,
-    marginTop:16,
-    fontWeight:'bold'
+    position:'absolute',
+    zIndex:1,
+    alignSelf:'center',
+    top:48
+  },
+  img:{
+    width:CARD_WIDTH+1,
+    height:CARD_HEIGHT,
+    flex:1, 
+    flexGrow:1
   }
 });
 
