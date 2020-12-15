@@ -52,7 +52,7 @@ const Detail = ({navigation})=>{
                     <Text category="p" status="hint">Tel number verified</Text>
                 </View>
                 <View style={styles.conditions}>
-                    <Icon name="closecircleo" status="danger" type="AntDesign" size={20} containerStyle={{marginRight:8}}/>
+                    <Icon name="closecircleo" status="alert" type="AntDesign" size={20} containerStyle={{marginRight:8}}/>
                     <Text category="p" status="hint">Email verified</Text>
                 </View>
             </View>

@@ -1,7 +1,6 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native';
-//  import {TimeAndLocation, DriverPreview} from '_molecules';
-import {Timeline} from '_organisms';
+import Timeline from './Timeline';
 import {Colors, Mixins} from '_styles';
 import {Text, Icon, Touchable} from '_atoms';
 

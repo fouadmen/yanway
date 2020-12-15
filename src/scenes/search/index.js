@@ -18,7 +18,7 @@ const Search = ({navigation}) => {
               <View><TouchableWithoutFeedback onPress={() => navigation.navigate('PassangersModal',{target:''})}><View><Text status='primary' weight="regular" category="h4">1 passanger</Text></View></TouchableWithoutFeedback></View>
             </View>
             <Divider />
-            <View style={styles.button}><Button style={{borderRadius:20}} textStyle={{fontSize:16, color:'Black'}} onPress={()=>console.log(navigation.navigate("ResultsModal"))}> Search </Button></View>
+            <View style={styles.button}><Button style={{borderRadius:20}} textStyle={{fontSize:16, color:'Black'}} onPress={()=>navigation.navigate("ResultsModal")}> Search </Button></View>
             <View style={styles.history}></View>
         </Layout>
     );

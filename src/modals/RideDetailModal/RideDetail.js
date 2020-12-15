@@ -97,7 +97,7 @@ const RideDetail = ({navigation}) => {
                 </View>
             </Timeline>
             <View style={{height:96, width:WIDTH, borderTopColor:Colors.GRAY_LIGHT, borderTopWidth:1, flexDirection:'column', justifyContent:'center'}}>
-                <View style={styles.button}><Button style={{borderRadius:20}} textStyle={{fontSize:16, color:'Black'}} onPress={()=>console.log(navigation.navigate("CheckoutModal"))}> Continue </Button></View>
+                <View style={styles.button}><Button style={{borderRadius:20}} textStyle={{fontSize:16, color:'Black'}} onPress={()=>navigation.navigate("CheckoutModal")}> Continue </Button></View>
             </View>                
         </Layout>
     )
