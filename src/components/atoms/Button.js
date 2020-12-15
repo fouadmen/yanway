@@ -7,11 +7,10 @@ const _status = {
     "primary" : {backgroundColor: Colors.PRIMARY},
     "success": {backgroundColor: Colors.SUCCESS},
     "warning": {backgroundColor: Colors.WARNING},
-    "danger": {backgroundColor: Colors.ALERT},
+    "alert": {backgroundColor: Colors.ALERT},
     "white": {backgroundColor: Colors.WHITE}
 }
 const Button = ({children, status, onPress, textStatus})=>{
-    console.log("stats : ", _status[textStatus]);
     return (
         <View style={{borderRadius:24, overflow:'hidden'}}>
             <Touchable onPress={onPress ? onPress : null}>

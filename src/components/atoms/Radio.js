@@ -1,6 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Text, Icon, Touchable } from './';
+import Text from './Text';
+import Icon from './Icon';
+import Touchable from './Touchable';
 
 const Radio = ({children, checked, onPress})=>{
     return (

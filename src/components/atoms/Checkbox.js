@@ -1,6 +1,9 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Text, Icon, Touchable } from './';
+
+import Text from './Text';
+import Icon from './Icon';
+import Touchable from './Touchable';
 
 const Checkbox = ({children, onPress, style})=>{
     const [checked, setChecked] = React.useState(false);

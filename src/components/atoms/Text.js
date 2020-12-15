@@ -20,7 +20,7 @@ const _status = {
     "primary" : {color: Colors.PRIMARY},
     "success": {color: Colors.SUCCESS},
     "warning": {color: Colors.WARNING},
-    "danger": {color: Colors.ALERT},
+    "alert": {color: Colors.ALERT},
     "white": {color: Colors.WHITE},
 }
 
