@@ -12,6 +12,7 @@ import {Results, Filter} from '_modals/ResultsModal'
 import {RideDetail, DriverProfile, DriverRates} from '_modals/RideDetailModal';
 import {Summary, TotalBreakDown, CheckoutMethod} from '_modals/CheckoutModal';
 import { StartModal, DestinationModal, StopoversModal, BackSeatsModal, InstantApprovalModal, PriceSuggestionModal, NoteModal, ConfimationModal, PriceAdjustmentModal } from "_modals/RideOfferModal";
+import { RideHistory, RidePlan } from "_modals/HistoryModal";
 import {Calendar, Time} from '_modals/DateModal';
 import {Colors} from '_styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -29,6 +30,8 @@ const CheckoutStack = createStackNavigator();
 const ResultsStack = createStackNavigator();
 
 const OfferStack = createStackNavigator();
+
+const HistoryStack = createStackNavigator();
 
 const Tab = createMaterialBottomTabNavigator();
 const AppRootStackNavigator = createStackNavigator();
@@ -160,6 +163,15 @@ function OfferModal() {
   );
 }
 
+function HistoryModal() {
+  return (
+    <HistoryStack.Navigator headerMode="none" mode="modal">
+      <HistoryStack.Screen name="RideHistory" component={RideHistory}/>
+      <HistoryStack.Screen name="RidePlan" component={RidePlan}/>
+    </HistoryStack.Navigator>
+  );
+}
+
 function TabNavigator(){
   return (
     <Tab.Navigator initialRouteName="Rides" screenOptions = {tab_opt}  barStyle={tab_style} activeColor={Colors.PRIMARY} inactiveColor={Colors.BLACK}>
@@ -188,6 +200,7 @@ const AppNavigator = ()=>{
           <AppRootStackNavigator.Screen name="CheckoutModal" component={CheckoutModal}/>
           <AppRootStackNavigator.Screen name="ResultsModal" component={ResultsModal}/>
           <AppRootStackNavigator.Screen name="OfferModal" component={OfferModal} options={verticalInterpolation}/>
+          <AppRootStackNavigator.Screen name="HistoryModal" component={HistoryModal} />
         </AppRootStackNavigator.Navigator>
         
     )
