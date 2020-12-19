@@ -1,13 +1,10 @@
 import React from 'react';
-import { FlatList, View, ActivityIndicator, Platform, Dimensions } from 'react-native';
-import { Text, Layout, Button } from '_atoms';
+import { FlatList, View, ActivityIndicator, Platform } from 'react-native';
+import { Text, Layout } from '_atoms';
 import {RecapHeader} from '_molecules';
 import {ResultItem} from '_organisms';
 import {Colors} from '_styles';
 
-const loader = () => (
-    <ActivityIndicator size={Platform.OS==="android" ? 48 : 'large'} color={Colors.SUCCESS}/>
-  );
 
 const EmptyState = ({hasNoData, displayActivityIndicator}) => {
     if (displayActivityIndicator) {
@@ -47,7 +44,7 @@ const Results = ({navigation}) => {
     }
 
     React.useEffect(() => {
-        let t = new Array(1).fill((data._id=String(Math.random()*100)))
+        let t = new Array(6).fill((data._id=String(Math.random()*100)))
         setTimeout(()=>{
             updateDate(t)
         }, 1000);
